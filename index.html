@@ -62,6 +62,151 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-document-vision/introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/25/document-vision/introduction/" class="article-date">
+  <time datetime="2019-02-25T14:56:13.601Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/document-vision/introduction/">node-dv intorduction</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>尚未完成</p>
+<hr>
+<p>documentVision介绍</p>
+<h1 id="计算机视觉介绍"><a href="#计算机视觉介绍" class="headerlink" title="计算机视觉介绍"></a>计算机视觉介绍</h1><p>计算机视觉结合了计算机科学的许多领域，从（低级）图像数据中提取（高级）信息。</p>
+<h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><p>许多计算机视觉系统使用管道模式。 此管道通常可以分解为以下步骤：</p>
+<p>Data =&gt; Preprocessing -&gt; Segmentation -&gt; Feature Extraction -&gt; Classification =&gt; Information</p>
+<p>数据 =&gt;预处理 -&gt;分段 -&gt;特征提取 -&gt;分类 =&gt;信息</p>
+<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><p>预处理图像时，通常应用去除噪声，热像素等。将其视为使用GIMP和G’MIC准备图像。 这一切都是为了让后续算法的生活更简单。</p>
+<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><p>正式地说，分段是将每个像素分配给一个组的过程。 使用文本时，这通常是“文本是黑色的”和“纸是白色的” - 这也称为二值化。</p>
+<p><img src="https://raw.githubusercontent.com/wiki/creatale/node-dv/images/Segmentation-Text.png" alt="分段"></p>
+<p>在处理复杂图像时，通常会提取两个以上的段 - 这通常使用区域增长和统计区域合并等算法来完成。</p>
+<p><img src="https://github.com/creatale/node-dv/wiki/images/Segmentation-Lena.png" alt="complex images"></p>
+<h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><p>在特征提取期间，诸如线条，形状，运动等的特征从单个分割图像或一系列分割图像中提取（注意：这里是龙！）。 举一些特别流行的算法：Canny边缘检测器和Hough变换可用于提取边缘和线条。</p>
+<p><img src="https://github.com/creatale/node-dv/wiki/images/Feature-Edge-Hough.png" alt="特征提取"></p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>在分类过程中，所有提取的特征都被分类为有用的信息，例如“这是一个置信度为90％的’X’或置信度为60％的’x’”。 此步骤通常涉及某种决策树和大量统计信息，有时还涉及机器学习。</p>
+<p>既然我们谈论现实世界的图像和现实世界是棘手的，那么有一种信心是很好的。 将其视为保险或信任因素，可防止您的申请遭受致命的误解。</p>
+<h2 id="应用于文档"><a href="#应用于文档" class="headerlink" title="应用于文档"></a>应用于文档</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/25/document-vision/introduction/" data-id="cjskiubcx0003v0wcdlnpe2px" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-document-vision/readme" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/25/document-vision/readme/" class="article-date">
+  <time datetime="2019-02-25T14:31:40.756Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/document-vision/readme/">node-dv</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>要不走你命的，都会使你强大。</em><br>node-dv真是个难啃的家伙，所以我决定把官方文档完整的翻译一遍，看看是否能够理解它。</p>
+<hr>
+<h1 id="DocumentVision"><a href="#DocumentVision" class="headerlink" title="DocumentVision"></a>DocumentVision</h1><p>DocumentVision 是一个用于处理并理解扫描文档的nodejs库。</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>使用<a href="https://code.google.com/archive/p/jpeg-compressor/" target="_blank" rel="noopener">jpeg-compressor</a>, <a href="https://lodev.org/lodepng/" target="_blank" rel="noopener">LodePNG</a>和像素缓冲区加载图片</li>
+<li>使用Leptonica（版本1.69）和OpenCV（版本2.4.9）进行图像处理</li>
+<li>使用LSWMS进行线段检测</li>
+<li>OCR使用Tesseract（3.03版）</li>
+<li>使用ZXing的OMR for Barcodes（版本2.3.0）</li>
+</ul>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>安装完成后，下载该图像。 您可以使用包含300dpi或更高的简单文本的任何其他图像。 现在运行以下代码段来识别图像中的文本：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dv = <span class="built_in">require</span>(<span class="string">'dv'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> dv.Image(<span class="string">'png'</span>, fs.readFileSync(<span class="string">'textpage300.png'</span>));</span><br><span class="line"><span class="keyword">var</span> tesseract = <span class="keyword">new</span> dv.Tesseract(<span class="string">'eng'</span>, image);</span><br><span class="line"><span class="built_in">console</span>.log(tesseract.findText(<span class="string">'plain'</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="一下有一些链接，帮助你快速使用"><a href="#一下有一些链接，帮助你快速使用" class="headerlink" title="一下有一些链接，帮助你快速使用"></a>一下有一些链接，帮助你快速使用</h2><ul>
+<li><a href="../introduction">介绍</a></li>
+<li>教程</li>
+<li>API参考</li>
+<li>Bug Tracker</li>
+<li>更新日志</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/25/document-vision/readme/" data-id="cjskiubcv0002v0wcs1xc2qa4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/24/hexo/" class="article-date">
+  <time datetime="2019-02-24T06:02:24.849Z" itemprop="datePublished">2019-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/24/hexo/">十分钟搭建个人博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一直想搭建自己的博客网站, 但是拖延症星人怎么会这么草率的开始呢。<br>使用nodejs, git, github, hexo搭建个人博客。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/24/hexo/" data-id="cjskiubc40000v0wc9wk8dk9n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/23/hello-world/" class="article-date">
@@ -84,7 +229,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHumszb</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -97,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/23/hello-world/" data-id="cjsg9xjrz0000mowcma9bbtxd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/23/hello-world/" data-id="cjskiubce0001v0wcateur0fn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,6 +281,18 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/02/25/document-vision/introduction/">node-dv intorduction</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/25/document-vision/readme/">node-dv</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/24/hexo/">十分钟搭建个人博客</a>
+          </li>
         
           <li>
             <a href="/2019/02/23/hello-world/">Hello World</a>

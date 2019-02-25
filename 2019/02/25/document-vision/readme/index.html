@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>node-dv | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="要不走你命的，都会使你强大。node-dv真是个难啃的家伙，所以我决定把官方文档完整的翻译一遍，看看是否能够理解它。  DocumentVisionDocumentVision 是一个用于处理并理解扫描文档的nodejs库。 特点 使用jpeg-compressor, LodePNG和像素缓冲区加载图片 使用Leptonica（版本1.69）和OpenCV（版本2.4.9）进行图像处理 使用LSW">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-dv">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/document-vision/readme/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="要不走你命的，都会使你强大。node-dv真是个难啃的家伙，所以我决定把官方文档完整的翻译一遍，看看是否能够理解它。  DocumentVisionDocumentVision 是一个用于处理并理解扫描文档的nodejs库。 特点 使用jpeg-compressor, LodePNG和像素缓冲区加载图片 使用Leptonica（版本1.69）和OpenCV（版本2.4.9）进行图像处理 使用LSW">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-25T15:50:24.032Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node-dv">
+<meta name="twitter:description" content="要不走你命的，都会使你强大。node-dv真是个难啃的家伙，所以我决定把官方文档完整的翻译一遍，看看是否能够理解它。  DocumentVisionDocumentVision 是一个用于处理并理解扫描文档的nodejs库。 特点 使用jpeg-compressor, LodePNG和像素缓冲区加载图片 使用Leptonica（版本1.69）和OpenCV（版本2.4.9）进行图像处理 使用LSW">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-document-vision/readme" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/25/document-vision/readme/" class="article-date">
+  <time datetime="2019-02-25T14:31:40.756Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node-dv
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>要不走你命的，都会使你强大。</em><br>node-dv真是个难啃的家伙，所以我决定把官方文档完整的翻译一遍，看看是否能够理解它。</p>
+<hr>
+<h1 id="DocumentVision"><a href="#DocumentVision" class="headerlink" title="DocumentVision"></a>DocumentVision</h1><p>DocumentVision 是一个用于处理并理解扫描文档的nodejs库。</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>使用<a href="https://code.google.com/archive/p/jpeg-compressor/" target="_blank" rel="noopener">jpeg-compressor</a>, <a href="https://lodev.org/lodepng/" target="_blank" rel="noopener">LodePNG</a>和像素缓冲区加载图片</li>
+<li>使用Leptonica（版本1.69）和OpenCV（版本2.4.9）进行图像处理</li>
+<li>使用LSWMS进行线段检测</li>
+<li>OCR使用Tesseract（3.03版）</li>
+<li>使用ZXing的OMR for Barcodes（版本2.3.0）</li>
+</ul>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>安装完成后，下载该图像。 您可以使用包含300dpi或更高的简单文本的任何其他图像。 现在运行以下代码段来识别图像中的文本：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dv = <span class="built_in">require</span>(<span class="string">'dv'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> image = <span class="keyword">new</span> dv.Image(<span class="string">'png'</span>, fs.readFileSync(<span class="string">'textpage300.png'</span>));</span><br><span class="line"><span class="keyword">var</span> tesseract = <span class="keyword">new</span> dv.Tesseract(<span class="string">'eng'</span>, image);</span><br><span class="line"><span class="built_in">console</span>.log(tesseract.findText(<span class="string">'plain'</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="一下有一些链接，帮助你快速使用"><a href="#一下有一些链接，帮助你快速使用" class="headerlink" title="一下有一些链接，帮助你快速使用"></a>一下有一些链接，帮助你快速使用</h2><ul>
+<li><a href="../introduction">介绍</a></li>
+<li>教程</li>
+<li>API参考</li>
+<li>Bug Tracker</li>
+<li>更新日志</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/25/document-vision/readme/" data-id="cjskiubcv0002v0wcs1xc2qa4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/02/25/document-vision/introduction/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          node-dv intorduction
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/24/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">十分钟搭建个人博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/25/document-vision/introduction/">node-dv intorduction</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/25/document-vision/readme/">node-dv</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/24/hexo/">十分钟搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/23/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

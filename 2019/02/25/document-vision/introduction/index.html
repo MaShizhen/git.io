@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>node-dv intorduction | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="尚未完成  documentVision介绍 计算机视觉介绍计算机视觉结合了计算机科学的许多领域，从（低级）图像数据中提取（高级）信息。 管道许多计算机视觉系统使用管道模式。 此管道通常可以分解为以下步骤： Data =&amp;gt; Preprocessing -&amp;gt; Segmentation -&amp;gt; Feature Extraction -&amp;gt; Classification =&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node-dv intorduction">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/document-vision/introduction/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="尚未完成  documentVision介绍 计算机视觉介绍计算机视觉结合了计算机科学的许多领域，从（低级）图像数据中提取（高级）信息。 管道许多计算机视觉系统使用管道模式。 此管道通常可以分解为以下步骤： Data =&amp;gt; Preprocessing -&amp;gt; Segmentation -&amp;gt; Feature Extraction -&amp;gt; Classification =&amp;gt;">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/wiki/creatale/node-dv/images/Segmentation-Text.png">
+<meta property="og:image" content="https://github.com/creatale/node-dv/wiki/images/Segmentation-Lena.png">
+<meta property="og:image" content="https://github.com/creatale/node-dv/wiki/images/Feature-Edge-Hough.png">
+<meta property="og:updated_time" content="2019-02-25T15:46:55.108Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node-dv intorduction">
+<meta name="twitter:description" content="尚未完成  documentVision介绍 计算机视觉介绍计算机视觉结合了计算机科学的许多领域，从（低级）图像数据中提取（高级）信息。 管道许多计算机视觉系统使用管道模式。 此管道通常可以分解为以下步骤： Data =&amp;gt; Preprocessing -&amp;gt; Segmentation -&amp;gt; Feature Extraction -&amp;gt; Classification =&amp;gt;">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wiki/creatale/node-dv/images/Segmentation-Text.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-document-vision/introduction" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/25/document-vision/introduction/" class="article-date">
+  <time datetime="2019-02-25T14:56:13.601Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node-dv intorduction
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>尚未完成</p>
+<hr>
+<p>documentVision介绍</p>
+<h1 id="计算机视觉介绍"><a href="#计算机视觉介绍" class="headerlink" title="计算机视觉介绍"></a>计算机视觉介绍</h1><p>计算机视觉结合了计算机科学的许多领域，从（低级）图像数据中提取（高级）信息。</p>
+<h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><p>许多计算机视觉系统使用管道模式。 此管道通常可以分解为以下步骤：</p>
+<p>Data =&gt; Preprocessing -&gt; Segmentation -&gt; Feature Extraction -&gt; Classification =&gt; Information</p>
+<p>数据 =&gt;预处理 -&gt;分段 -&gt;特征提取 -&gt;分类 =&gt;信息</p>
+<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><p>预处理图像时，通常应用去除噪声，热像素等。将其视为使用GIMP和G’MIC准备图像。 这一切都是为了让后续算法的生活更简单。</p>
+<h2 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h2><p>正式地说，分段是将每个像素分配给一个组的过程。 使用文本时，这通常是“文本是黑色的”和“纸是白色的” - 这也称为二值化。</p>
+<p><img src="https://raw.githubusercontent.com/wiki/creatale/node-dv/images/Segmentation-Text.png" alt="分段"></p>
+<p>在处理复杂图像时，通常会提取两个以上的段 - 这通常使用区域增长和统计区域合并等算法来完成。</p>
+<p><img src="https://github.com/creatale/node-dv/wiki/images/Segmentation-Lena.png" alt="complex images"></p>
+<h2 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h2><p>在特征提取期间，诸如线条，形状，运动等的特征从单个分割图像或一系列分割图像中提取（注意：这里是龙！）。 举一些特别流行的算法：Canny边缘检测器和Hough变换可用于提取边缘和线条。</p>
+<p><img src="https://github.com/creatale/node-dv/wiki/images/Feature-Edge-Hough.png" alt="特征提取"></p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>在分类过程中，所有提取的特征都被分类为有用的信息，例如“这是一个置信度为90％的’X’或置信度为60％的’x’”。 此步骤通常涉及某种决策树和大量统计信息，有时还涉及机器学习。</p>
+<p>既然我们谈论现实世界的图像和现实世界是棘手的，那么有一种信心是很好的。 将其视为保险或信任因素，可防止您的申请遭受致命的误解。</p>
+<h2 id="应用于文档"><a href="#应用于文档" class="headerlink" title="应用于文档"></a>应用于文档</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/25/document-vision/introduction/" data-id="cjskiubcx0003v0wcdlnpe2px" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/25/document-vision/readme/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node-dv</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/25/document-vision/introduction/">node-dv intorduction</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/25/document-vision/readme/">node-dv</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/24/hexo/">十分钟搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/23/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
